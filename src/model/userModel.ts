@@ -2,20 +2,17 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../config/dbConnect";
 
 const User = sequelize.define(
-  "User",
+  "Users",
   {
-    // Model attributes are defined here
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    lastName: {
-      type: DataTypes.STRING,
-      // allowNull defaults to true
-    },
+    name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
+    address: DataTypes.STRING,
+    isActive: DataTypes.BOOLEAN,
+    age: DataTypes.INTEGER,
   },
   {
     // Other model options go here

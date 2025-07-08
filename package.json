@@ -12,12 +12,13 @@
   "dependencies": {
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
-    "nodemon": "^3.1.10",
-    "sequelize": "^6.37.7"
+    "nodemon": "^3.1.10"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.10",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
