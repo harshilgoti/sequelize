@@ -12,7 +12,6 @@ const User = sequelize.define(
     },
     address: DataTypes.STRING,
     isActive: DataTypes.BOOLEAN,
-    age: DataTypes.INTEGER,
   },
   {
     // Other model options go here
