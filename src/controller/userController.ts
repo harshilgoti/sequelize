@@ -11,6 +11,27 @@ const createUser = asyncHandler(
       return res.status(400).json({ message: "No file uploaded" });
     }
 
+    console.log("🚀 ~ req:", req.body);
+    // const user = await User.create(
+    //   {
+    //     ...req.body,
+    //   },
+    //   {
+    //     isNewRecord: true,
+    //     // fields: ["id"],
+    //   }
+    // );
+
+    // const newUser = await User.findOne({
+    //   where: {
+    //     id: {
+    //       [Op.eq]: user.toJSON().id,
+    //     },
+    //   },
+    // });
+
+    // const filePath = path.join(__dirname, "../../", req.file.path);
+
     const workbook = xlsx.readFile(req.file.path);
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
