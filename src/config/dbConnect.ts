@@ -5,21 +5,13 @@ const sequelize = new Sequelize("sequelize", "root", "password@123", {
   dialect: "mysql",
 });
 
-const dbConnection = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("MYSQL Database connected successfully...!");
+  })
+  .catch((err) => {
+    console.log("Database not connected");
+  });
 
-  try {
-    // await sequelize.sync({ alter: true });
-    await sequelize.sync();
-    console.log("All models were synchronized successfully.");
-  } catch (error) {
-    console.error("Unable to synchronized to the database:", error);
-  }
-};
-
-export { dbConnection, sequelize };
+export default sequelize;
